@@ -1,10 +1,9 @@
 package com.theshy.fullstackbackend.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Access(AccessType.FIELD)
 public class User {
     @Id
     @GeneratedValue
@@ -12,6 +11,9 @@ public class User {
     private String username;
     private String name;
     private String email;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;

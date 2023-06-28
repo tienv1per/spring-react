@@ -68,7 +68,6 @@ const AddUser = () => {
                         <button type='submit' className='btn btn-outline-primary'>Submit</button>
                         <Link className='btn btn-outline-danger mx-2' to="/">Cancel</Link>
                     </form>
-
                 </div>
             </div>
         </div>

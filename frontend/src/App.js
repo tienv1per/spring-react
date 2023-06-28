@@ -8,6 +8,7 @@ import {
     Routes
 } from "react-router-dom";
 import AddUser from './users/AddUser';
+import EditUser from './users/EditUser';
 
 function App() {
     return (
@@ -15,8 +16,9 @@ function App() {
         <Router>
             <Navbar/>
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/adduser' element={<AddUser/>}/>
+                <Route exact path='/' element={<Home/>}/>
+                <Route exact path='/adduser' element={<AddUser/>}/>
+                <Route exact path='/edituser/:id' element={<EditUser/>}/>
             </Routes>
         </Router>
 			

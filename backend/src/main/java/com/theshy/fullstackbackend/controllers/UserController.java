@@ -1,5 +1,6 @@
 package com.theshy.fullstackbackend.controllers;
 
+import com.theshy.fullstackbackend.exception.UserNotFoundException;
 import com.theshy.fullstackbackend.models.User;
 import com.theshy.fullstackbackend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class UserController {
     @GetMapping("/users")
     List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/user/{id}")
+    User getUserById(@PathVariable Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException(id));
     }
 }
